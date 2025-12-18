@@ -21,7 +21,7 @@ const recipes = [
         prepTimeMinutes: 60,
         difficulty: "hard",
         image: "https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg",
-        image: "https://www.themealdb.com/images/media/meals/xrttsx1487339558.jpg",
+
         ingredients: ["Basmati Rice", "Chicken", "Yogurt", "Onions", "Spices", "Saffron"],
         instructions: "1. Marinate chicken. 2. Cook rice till 70% done. 3. Layer chicken and rice. 4. Dum cook for 20 mins.",
         tags: ["Dinner", "Rice", "Spicy"]

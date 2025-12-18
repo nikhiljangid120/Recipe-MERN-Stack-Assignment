@@ -2,19 +2,19 @@ const express = require('express');
 const router = express.Router();
 const Recipe = require('../models/Recipe');
 
-// GET /api/recipes - Get all recipes with search & filters
+
 router.get('/', async (req, res) => {
     try {
         const { search, cuisine, isVegetarian, maxTime, difficulty } = req.query;
 
         let query = {};
 
-        // Text Search (Name, Ingredients, Tags)
+
         if (search) {
             query.$text = { $search: search };
         }
 
-        // Filters
+
         if (cuisine) {
             query.cuisine = { $regex: cuisine, $options: 'i' };
         }
@@ -35,7 +35,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET /api/recipes/:id - Get single recipe
+
 router.get('/:id', async (req, res) => {
     try {
         const recipe = await Recipe.findById(req.params.id);
@@ -46,7 +46,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// POST /api/recipes - Create new recipe
+
 router.post('/', async (req, res) => {
     try {
         const newRecipe = new Recipe(req.body);

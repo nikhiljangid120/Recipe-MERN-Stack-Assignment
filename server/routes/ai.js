@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Groq = require('groq-sdk');
 
-// Initialize Groq
-// Note: In production, ensure GROQ_API_KEY is set in .env
+
 const groq = new Groq({
     apiKey: process.env.GROQ_API_KEY || 'Provide-Key'
 });
@@ -22,7 +21,7 @@ router.post('/suggest', async (req, res) => {
             });
         }
 
-        // Using Llama-3.3-70b-versatile (Free tier compatible)
+
         const completion = await groq.chat.completions.create({
             messages: [
                 {

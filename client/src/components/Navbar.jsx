@@ -15,20 +15,20 @@ const Navbar = () => {
             padding: '1rem 2rem'
         }}>
             <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: 0 }}>
-                {/* Logo */}
+
                 <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.5rem', fontWeight: '700', color: 'var(--accent)' }}>
                     <ChefHat size={32} />
                     <span style={{ color: 'var(--text-primary)' }}>Smart<span style={{ color: 'var(--accent)' }}>Recipe</span></span>
                 </Link>
 
-                {/* Desktop Links */}
+
                 <div className="desktop-menu" style={{ display: 'flex', gap: '2rem' }}>
                     <Link to="/" style={{ fontWeight: '500', transition: 'color 0.2s', padding: '0.5rem 1rem' }}>Explore</Link>
                     <Link to="/saved" style={{ fontWeight: '500', transition: 'color 0.2s', padding: '0.5rem 1rem' }}>Saved</Link>
                     <Link to="/about" style={{ fontWeight: '500', transition: 'color 0.2s', padding: '0.5rem 1rem' }}>About</Link>
                 </div>
 
-                {/* Mobile Hamburger */}
+
                 <div className="mobile-menu-btn" style={{ display: 'none' }}>
                     <button onClick={() => setIsOpen(!isOpen)} style={{ background: 'none', color: 'var(--text-primary)' }}>
                         {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -36,7 +36,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile Dropdown */}
+
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
