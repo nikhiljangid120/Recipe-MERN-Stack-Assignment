@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import AIModal from '../components/AIModal';
-import { Clock, ChefHat, ArrowLeft, Heart, Sparkles, Loader } from 'lucide-react';
+import { Clock, ChefHat, ArrowLeft, Heart, Sparkles, Loader, Wand2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import API_BASE_URL from '../config';
 import { motion } from 'framer-motion';
