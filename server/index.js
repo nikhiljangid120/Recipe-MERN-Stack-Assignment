@@ -16,7 +16,7 @@ if (process.env.GROQ_API_KEY) {
 
 // Middleware
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); 
 
 // Database Connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/recipe-explorer', {
