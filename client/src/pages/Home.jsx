@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import RecipeCard from '../components/RecipeCard';
 import SkeletonCard from '../components/SkeletonCard';
 import { Sparkles } from 'lucide-react';
+import API_BASE_URL from '../config';
 
 const Home = () => {
     const [recipes, setRecipes] = useState([]);
@@ -14,7 +15,7 @@ const Home = () => {
         try {
             // Build query string
             const queryString = new URLSearchParams(params).toString();
-            const res = await fetch(`/api/recipes?${queryString}`);
+            const res = await fetch(`${API_BASE_URL}/api/recipes?${queryString}`);
             const data = await res.json();
             setRecipes(data);
         } catch (err) {

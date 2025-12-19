@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import AIModal from '../components/AIModal';
-import { Clock, Users, ArrowLeft, Loader, ChefHat, Sparkles, Wand2 } from 'lucide-react';
+import { Clock, ChefHat, ArrowLeft, Heart, Sparkles, Loader } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import API_BASE_URL from '../config';
 import { motion } from 'framer-motion';
 
 const RecipeDetail = () => {
@@ -17,7 +19,7 @@ const RecipeDetail = () => {
     const [aiType, setAiType] = useState('explain'); // explain or suggest (though suggest is usually global)
 
     useEffect(() => {
-        fetch(`/api/recipes/${id}`)
+        fetch(`${API_BASE_URL}/api/recipes/${id}`)
             .then(res => res.json())
             .then(data => {
                 setRecipe(data);
@@ -33,7 +35,7 @@ const RecipeDetail = () => {
         setAiContent(""); // Reset content
 
         try {
-            const res = await fetch('/api/ai/explain', {
+            const res = await fetch(`${API_BASE_URL}/api/ai/explain`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
